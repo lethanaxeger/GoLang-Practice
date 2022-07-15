@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func string() {
+func main() {
 
 	fmt.Println("Fadlillah")
 	fmt.Println("Fadlillah Bashir")
