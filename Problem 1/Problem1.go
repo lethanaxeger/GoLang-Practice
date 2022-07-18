@@ -1,9 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
-	angka := [6]int{
+	angka := [...]int{
 		1,
 		4,
 		5,
@@ -13,7 +16,7 @@ func main() {
 	}
 
 	fmt.Println("Random array", "\n")
-	for i := 0; i < 6; i++ {
+	for i := 0; i <= 5; i++ {
 		fmt.Print(angka[i])
 
 		for j := 0; j < angka[i]; j++ {
@@ -25,7 +28,11 @@ func main() {
 
 	fmt.Println("==================================", "\n", "Sorted array", "\n")
 
-	for i := 0; i < angka[i]; i++ {
+	// digunakan untuk sorting ascending slicearray 
+	ascendingSlice := angka[:]
+	sort.Sort(sort.IntSlice(ascendingSlice))
+
+	for i := 0; i <= 5; i++ {
 		fmt.Print(angka[i])
 
 		for j := 0; j < angka[i]; j++ {
@@ -37,10 +44,14 @@ func main() {
 
 	fmt.Println("==================================", "\n", "Reverse Sorted array", "\n")
 
-	for i := 0; i < angka[i]; i++ {
-		// fmt.Print(angka[i])
+	// digunakan untuk sorting decending slicearray
+	decendingSlice := angka[:]
+	sort.Sort(sort.Reverse(sort.IntSlice(decendingSlice)))
 
-		for j := 8; j >= angka[i]; j-- {
+	for i := 0; i <= 5; i++ {
+		fmt.Print(angka[i])
+
+		for j := 0; j < angka[i]; j++ {
 			fmt.Print(" |")
 		}
 
